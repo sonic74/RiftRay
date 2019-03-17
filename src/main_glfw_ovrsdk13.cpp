@@ -385,9 +385,9 @@ void displayHMD()
         eyeRenderDesc[1] = ovr_GetRenderDesc(g_session, ovrEye_Right, hmdDesc.DefaultEyeFov[1]);
 
         // Get eye poses, feeding in correct IPD offset
-        ovrVector3f HmdToEyeOffset[2] = {
-            eyeRenderDesc[0].HmdToEyeOffset,
-            eyeRenderDesc[1].HmdToEyeOffset };
+        ovrPosef HmdToEyeOffset[2] = {
+            eyeRenderDesc[0].HmdToEyePose,
+            eyeRenderDesc[1].HmdToEyePose };
 #if 0
         // Get both eye poses simultaneously, with IPD offset already included.
         double displayMidpointSeconds = ovr_GetPredictedDisplayTime(g_session, 0);
